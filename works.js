@@ -1,15 +1,19 @@
-document.querySelectorAll('.work-title').forEach(title => {
-    title.addEventListener('mouseenter', (e) => {
-        const image = e.target.getAttribute('data-image');
-        const workItem = e.target.closest('.work-item');
-        const imageDiv = workItem.querySelector('.work-image');
-        imageDiv.style.backgroundImage = `url(${image})`;
-        imageDiv.style.opacity = '1';
-    });
-
-    title.addEventListener('mouseleave', (e) => {
-        const workItem = e.target.closest('.work-item');
-        const imageDiv = workItem.querySelector('.work-image');
-        imageDiv.style.opacity = '0';
+document.addEventListener('DOMContentLoaded', function() {
+    const workTitles = document.querySelectorAll('.work-title');
+    
+    workTitles.forEach(title => {
+        title.addEventListener('mouseenter', () => {
+            const workImage = title.closest('.work-item').querySelector('.work-image');
+            if (workImage) {
+                workImage.style.opacity = '1';
+            }
+        });
+        
+        title.addEventListener('mouseleave', () => {
+            const workImage = title.closest('.work-item').querySelector('.work-image');
+            if (workImage) {
+                workImage.style.opacity = '0';
+            }
+        });
     });
 });

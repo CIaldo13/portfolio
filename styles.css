@@ -12,29 +12,78 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-    backdrop-filter: blur(5px); /* Adds a slight blur effect */
+    padding: 20px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+/* Move @import and @font-face to the top of the file */
+@import url(https://db.onlinewebfonts.com/c/108e29b8b5ca4d6120e4b90e306ef178?family=Bruta);
+
+@font-face {
+    font-family: "Bruta";
+    src: url("https://db.onlinewebfonts.com/t/108e29b8b5ca4d6120e4b90e306ef178.eot");
+    src: url("https://db.onlinewebfonts.com/t/108e29b8b5ca4d6120e4b90e306ef178.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/108e29b8b5ca4d6120e4b90e306ef178.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/108e29b8b5ca4d6120e4b90e306ef178.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/108e29b8b5ca4d6120e4b90e306ef178.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/108e29b8b5ca4d6120e4b90e306ef178.svg#Bruta")format("svg");
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: #000000;
+    font-family: "Bruta", sans-serif;
+    font-size: 1.2rem;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    width: 200px;
+}
+
+nav ul {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;  /* Reduced from 40px */
+    margin: 0;
+    padding: 0;
+}
+
+/* Add margin-right to balance the logo width */
+nav ul:last-child {
+    margin-right: 200px;
+}
+
+.nav-logo:hover {
+    opacity: 0.6;
 }
 
 nav ul {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     list-style: none;
-    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
+    font-family: 'Courier New', monospace;
     font-size: 1.1rem;
-    opacity: 0.8;
+    text-transform: lowercase;
+    opacity: 1;
     transition: opacity 0.3s ease;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: none;
 }
 
 nav a:hover {
-    opacity: 1;
+    opacity: 0.6;
 }
 
 .hero {
@@ -46,11 +95,12 @@ nav a:hover {
     text-align: center;
 }
 
-h1 {
+.hero h1 {
     font-size: 4rem;
     margin-bottom: 10px;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Bruta", sans-serif;
 }
 
 .subtitle {
@@ -65,19 +115,20 @@ h1 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: -1;
 }
 
 .slide {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    filter: brightness(0.8); /* Slightly dim the images to make text more readable */
+    background-position: center;
+    background-size: cover;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
@@ -87,11 +138,86 @@ h1 {
 
 /* Update these styles in your styles.css */
 
-.works-container {
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Always 3 columns */
+    gap: 20px;
+    padding: 100px 40px 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Update mobile styles to maintain 3 columns but allow scrolling */
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        padding: 80px 20px 20px;
+        gap: 15px;
+        overflow-x: auto;
+    }
+
+    .project-item {
+        min-width: 200px;
+    }
+}
+
+.project-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+}
+
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: column;
-    padding: 100px 50px;
-    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-overlay h3 {
+    color: white;
+    font-size: 1.2rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    text-align: center;
+    line-height: 1.4;
+    padding: 0 15px;
+}
+
+.project-item:hover img {
+    transform: scale(1.05);
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-item:hover .project-overlay h3 {
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 80px 20px 20px;
+        gap: 15px;
+    }
 }
 
 .work-item {
@@ -170,7 +296,12 @@ h1 {
     background-position: center;
     opacity: 0;
     transition: opacity 0.5s ease;
-    z-index: 1;
+    z-index: -1; /* Changed from 1 to ensure it's behind other content */
+}
+
+.work-item:hover .work-image {
+    opacity: 1;
+    z-index: 1; /* Bring it forward when hovered */
 }
 
 
@@ -250,5 +381,489 @@ h1 {
 
     .bio p {
         font-size: 1rem;
+    }
+}
+
+/* Remove or comment out these sections
+.search-section {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 250px;
+}
+
+.search-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    display: none;
+}
+
+.search-toggle {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+    z-index: 4;
+    transition: background 0.3s ease;
+}
+*/
+.search-container.active {
+    display: block;
+}
+
+.search-toggle:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#searchInput {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#searchInput:focus {
+    border-bottom: 1px solid #666;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filters select {
+    width: 100%;
+    padding: 8px 25px 8px 15px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M0 2l4 4 4-4z' fill='%23000000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border-bottom: 1px solid #000;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+    border-bottom: 1px solid #666;
+}
+
+@media screen and (max-width: 768px) {
+    .search-section,
+    .search-toggle {
+        left: 20px;
+    }
+}
+
+#searchInput {
+    flex: 1;
+    padding: 8px 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-bottom: 1px solid #666;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+}
+
+.filters select {
+    padding: 8px 25px 8px 15px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M0 2l4 4 4-4z' fill='%23000000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border-bottom: 1px solid #000;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+    border-bottom: 1px solid #666;
+}
+
+@media screen and (max-width: 768px) {
+    .search-section {
+        padding: 60px 20px 0;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filters {
+        width: 100%;
+    }
+
+    .filters select {
+        flex: 1;
+    }
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+}
+
+.filters select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 150px;
+}
+.works-container {
+    padding-top: 100px;
+    padding-left: 40px;
+    width: 50%;
+    position: relative;
+}
+
+.work-item {
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.work-title {
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: block;
+    line-height: 1.1;
+    cursor: pointer;
+}
+
+.work-image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.work-title:hover + .work-image,
+.work-image:hover {
+    opacity: 1;
+}
+
+
+/* Aggiungi questi stili al tuo file CSS esistente */
+
+.about-container {
+    display: flex;
+    min-height: 100vh;
+    padding: 100px 50px;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+    padding-top: 50px;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #000;
+    text-shadow: none;
+}
+
+.bio {
+    margin-bottom: 40px;
+}
+
+.bio p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 120%; /* Immagine più larga del contenitore */
+    height: 100%;
+    object-fit: cover;
+    object-position: left center; /* Allinea l'immagine a sinistra */
+    display: block;
+    max-height: 80vh;
+    margin-left: -10%; /* Sposta l'immagine verso sinistra */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column-reverse;
+        padding: 60px 20px;
+    }
+
+    .about-image {
+        height: 50vh;
+    }
+
+    .about-text {
+        padding-top: 30px;
+    }
+
+    .about-text h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .bio p {
+        font-size: 1rem;
+    }
+}
+
+/* Remove or comment out these sections
+.search-section {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 250px;
+}
+
+.search-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    display: none;
+}
+
+.search-toggle {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+    z-index: 4;
+    transition: background 0.3s ease;
+}
+*/
+.search-container.active {
+    display: block;
+}
+
+.search-toggle:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#searchInput {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#searchInput:focus {
+    border-bottom: 1px solid #666;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filters select {
+    width: 100%;
+    padding: 8px 25px 8px 15px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M0 2l4 4 4-4z' fill='%23000000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border-bottom: 1px solid #000;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+    border-bottom: 1px solid #666;
+}
+
+@media screen and (max-width: 768px) {
+    .search-section,
+    .search-toggle {
+        left: 20px;
+    }
+}
+
+#searchInput {
+    flex: 1;
+    padding: 8px 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-bottom: 1px solid #666;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+}
+
+.filters select {
+    padding: 8px 25px 8px 15px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M0 2l4 4 4-4z' fill='%23000000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border-bottom: 1px solid #000;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+    border-bottom: 1px solid #666;
+}
+
+@media screen and (max-width: 768px) {
+    .search-section {
+        padding: 60px 20px 0;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filters {
+        width: 100%;
+    }
+
+    .filters select {
+        flex: 1;
+    }
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+}
+
+.filters select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 150px;
+}
+.works-container {
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    width: 50%;
+}
+
+.work-item {
+    margin-bottom: 5px; /* Reduced spacing between items */
+}
+
+.work-title {
+    font-size: 3.2rem;
+    font-weight: 500; /* Added bold weight */
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: block;
+    line-height: 1.1; /* Tighter line height */
+}
+
+/* Mobile styles remain the same */
+@media screen and (max-width: 768px) {
+    .works-container {
+        width: 100%;
+        padding: 80px 20px;
+    }
+
+    .work-title {
+        font-size: 2rem;
     }
 }
