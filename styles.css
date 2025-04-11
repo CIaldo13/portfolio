@@ -238,14 +238,38 @@ nav a:hover {
 }
 
 /* Add mobile responsive styles */
+/* Mobile navigation adjustments */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 15px;
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+        width: auto;
+    }
+
+    nav ul {
+        gap: 15px;
+        padding: 0 10px;
+        margin-right: 0;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile works container */
 @media screen and (max-width: 768px) {
     .works-container {
-        padding: 80px 20px;
-        gap: 30px;
+        width: 100%;
+        padding: 60px 20px;
     }
 
     .work-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
     }
 
     .work-image {
@@ -255,30 +279,29 @@ nav a:hover {
         bottom: 0;
         left: 0;
         top: auto;
-        right: auto;
-    }
-
-    nav ul {
-        gap: 20px;
-    }
-
-    nav a {
-        font-size: 0.9rem;
     }
 }
 
+/* Smaller mobile devices */
 @media screen and (max-width: 480px) {
-    .works-container {
-        padding: 60px 15px;
-        gap: 25px;
+    nav ul {
+        gap: 10px;
     }
 
     .work-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    nav ul {
-        gap: 15px;
+    .works-container {
+        padding: 50px 15px;
+    }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .work-image {
+        height: 100vh;
+        top: 0;
     }
 }
 
