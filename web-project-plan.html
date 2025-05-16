@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Project Plan - Portfolio Elia Cialdini</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #343a40;
+}
+
+.nav-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .text-content, .text-content p, .text-content ul, .text-content ol, .text-content li {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: #222;
+        }
+
+        .text-content ul, .text-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .text-content ul li, .text-content ol li {
+            margin-bottom: 8px;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            background-color: #343a40;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            /* Rimuovi o modifica questa linea */
+            /* padding-top: 500px; */
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .index {
+            width: 25%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .index h2,
+        .index ul,
+        .index li,
+        .index a {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .text-content {
+            width: 70%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .index h2 {
+            font-size: 1.8em;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .index ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .index li {
+            margin-bottom: 10px;
+        }
+
+        .index a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            
+        }
+
+        .index ul ul > li > a {
+            font-size: 1.1em;
+            font-weight: normal;
+            padding-left: 10px;
+        }
+
+        .index ul ul ul > li > a {
+            font-size: 1em;
+            padding-left: 20px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: #333;
+            margin-top: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #222;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Elia Cialdini</a>
+        <ul>
+            <li><a href="works.html">works</a></li>
+            <li><a href="personal-projects.html">personal projects</a></li>
+            <li><a href="about.html">about me</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="container">
+        <!-- Indice -->
+        <div class="index">
+            <h2>Indice</h2>
+            <ul>
+                <li><a href="#idea"><strong>1.</strong> Idea e Obiettivi</a></li>
+                <li><a href="#target"><strong>2.</strong> Target</a></li>
+                <li><a href="#benchmark"><strong>3.</strong> Benchmark</a></li>
+                <li><a href="#contenuti-struttura"><strong>4.</strong> Contenuti e Struttura del Sito</a></li>
+                <li><a href="#design"><strong>5.</strong> Design</a></li>
+                <li><a href="#tecnologie-funzionalita"><strong>6.</strong> Tecnologie e Funzionalità</a></li>
+                <li><a href="#accessibilita-usabilita"><strong>7.</strong> Accessibilità e Usabilità</a></li>
+                <li><a href="#sviluppi-futuri"><strong>8.</strong> Sviluppi Futuri</a></li>
+            </ul>
+        </div>
+
+        <!-- Testo -->
+        <div class="text-content">
+            <h2 id="idea">1. Idea e Obiettivi</h2>
+            <p>
+                L'idea di realizzare questo sito nasce dall’esigenza di avere una piattaforma digitale professionale dove raccogliere e mostrare la mia identità, il mio stile e i miei lavori fotografici. In quanto fotografo, videomaker e visual artist, ho bisogno di uno spazio che possa raccontarmi visivamente e che diventi un biglietto da visita per potenziali clienti e collaboratori.
+                Il sito ha come obiettivo principale quello di presentare il mio lavoro a persone, aziende o agenzie interessate ai miei servizi fotografici o visivi. È un portfolio online che deve comunicare subito il mio stile e il mio approccio, senza spiegazioni superflue, lasciando che siano le immagini a parlare.
+            </p>
+            <p>
+                Oltre a mostrare i lavori, il sito ha anche la funzione di:
+            </p>
+            <ul>
+                <li>permettere una navigazione semplice e intuitiva</li>
+                <li>trasmettere la mia identità visiva personale e riconoscibile</li>
+                <li>offrire un punto di contatto per chi desidera richiedere servizi o collaborazioni</li>
+            </ul>
+            <p>
+                Attualmente il sito non prevede la vendita diretta delle immagini o di altri prodotti, ma è concepito come vetrina. Tuttavia, tutte le immagini sono protette da copyright e non scaricabili, poiché l’utilizzo delle mie fotografie richiede una licenza o un pagamento.
+            </p>
+        
+            <h2 id="target">2. Target</h2>
+            <p>Il target del sito è ampio e diversificato:</p>
+            <ul>
+                <li>aziende o agenzie che cercano un fotografo o un visual artist per progetti commerciali o editoriali</li>
+                <li>clienti privati interessati a servizi fotografici su commissione</li>
+                <li>appassionati di fotografia e arte visiva</li>
+                <li>professionisti del settore culturale e creativo, come curatori, galleristi o editori</li>
+            </ul>
+            <p>
+                Non ci sono limiti geografici per l’accesso; il sito è in lingua italiana, ma in futuro potrebbe essere tradotto in inglese per raggiungere un pubblico internazionale.<br>
+                Il sito si rivolge sia a un pubblico esperto di fotografia che a utenti meno tecnici, grazie a una struttura chiara e a una navigazione intuitiva.
+            </p>
+        
+            <h2 id="benchmark">3. Benchmark</h2>
+            <p>
+                Prima di progettare il mio sito, ho analizzato diversi portfolio online di altri fotografi per comprendere quali fossero gli standard e i canoni da rispettare, soprattutto in termini di impatto visivo, essenzialità e immediatezza.<br>
+                Mi sono ispirato a siti come:
+            </p>
+            <ul>
+                <li>Andrea Bianchera</li>
+                <li>Lorenzo Sorbini</li>
+                <li>Amedeo Zancanella</li>
+                <li>Documenting Culture</li>
+            </ul>
+            <p>Da questi esempi ho tratto la convinzione che un portfolio fotografico debba avere:</p>
+            <ul>
+                <li>poche parole e descrizioni minime</li>
+                <li>un design che non sovrasti le immagini, ma le valorizzi</li>
+                <li>una navigazione semplice e fluida</li>
+                <li>immagini di grande impatto, protagoniste della pagina</li>
+            </ul>
+            <p>Alcuni elementi che ho scelto di evitare rispetto ad altri portfolio sono:</p>
+            <ul>
+                <li>testi eccessivamente lunghi o dettagliati</li>
+                <li>menu complessi o multilivello</li>
+                <li>animazioni troppo invasive che rallentano l’esperienza utente</li>
+            </ul>
+        
+            <h2 id="contenuti-struttura">4. Contenuti e Struttura del Sito</h2>
+            <img src="diagramma.png" alt="diagramma" style="width: 100%; height: auto;">
+            <p>
+                Il sito è composto da quattro sezioni principali:
+            <p>Il sito è organizzato in quattro sezioni principali:</p>
+            <ol>
+                <li>
+                    <strong>Home</strong>
+                    <ul>
+                        <li>Pagina di benvenuto con una selezione di immagini che scorrono in evidenza</li>
+                        <li>Impatto visivo immediato per trasmettere subito il mio stile</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Lavori su Commissione</strong>
+                    <ul>
+                        <li>Raccolta dei progetti realizzati per clienti</li>
+                        <li>Organizzazione per categorie o clienti, con funzione di filtro e ricerca</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Progetti Personali</strong>
+                    <ul>
+                        <li>Sezione dedicata alle mie esplorazioni artistiche e sperimentali</li>
+                        <li>Permette di vedere il mio percorso creativo più intimo e libero</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Chi Sono</strong>
+                    <ul>
+                        <li>Pagina biografica con una breve presentazione di me e della mia filosofia visiva</li>
+                        <li>Spazio per raccontare la mia formazione, il mio approccio e i miei interessi artistici</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>
+                In tutte le sezioni, le immagini possono essere visualizzate in galleria interattiva con possibilità di ingrandimento e scorrimento. È presente una barra di ricerca nella pagina dei lavori, oltre a filtri per categoria.<br>
+                Non ci sono pulsanti di download: tutte le immagini sono protette da blocco al salvataggio.
+            </p>
+        
+            <h2 id="design">5. Design</h2>
+            <p>
+                Il design è stato pensato per essere minimalista ed elegante, con una palette di colori neutri e tipografia semplice, lasciando che siano le immagini a emergere.<br>
+                Elementi fondamentali del design:
+            </p>
+            <ul>
+                <li>spazi bianchi ampi per dare respiro alle immagini</li>
+                <li>assenza di elementi grafici superflui</li>
+                <li>utilizzo di un font ispirato alla macchina da scrivere come richiamo alla mia passione per l’informatica</li>
+                <li>predominanza del bianco e nero con qualche accento cromatico per richiamare la mia fotografia</li>
+            </ul>
+            <p>Non utilizzo un logo grafico ma il mio nome e cognome come firma e marchio personale.</p>
+        
+            <h2 id="tecnologie-funzionalita">6. Tecnologie e Funzionalità</h2>
+            <p>
+                Il sito è stato sviluppato in HTML, CSS e JavaScript, ospitato su GitHub Pages. La struttura è semplice e facilmente aggiornabile.<br>
+                Attualmente è ottimizzato per desktop, ma è in fase di sviluppo una versione responsive per mobile.<br>
+                Funzionalità presenti:
+            </p>
+            <ul>
+                <li>galleria interattiva con ingrandimento e scorrimento immagini</li>
+                <li>barra di ricerca e filtri nella pagina dei lavori</li>
+                <li>modulo di contatto via email</li>
+            </ul>
+            <p>
+                Non sono presenti funzioni di interazione sociale diretta (like, commenti, condivisioni), ma i link ai miei profili social sono disponibili nel footer.<br>
+                In futuro vorrei aggiungere:
+            </p>
+            <ul>
+                <li>una sezione e-commerce per preset fotografici o risorse digitali</li>
+                <li>la possibilità di tradurre il sito in inglese</li>
+                <li>un blog o una sezione di articoli per approfondire i progetti</li>
+            </ul>
+        
+            <h2 id="accessibilita-usabilita">7. Accessibilità e Usabilità</h2>
+            <p>
+                Il sito è pensato per essere accessibile a tutti, con una navigazione chiara, testi leggibili e immagini ottimizzate per la visualizzazione su schermo.<br>
+                L’accesso non ha limitazioni geografiche e linguistiche (attualmente solo in italiano). La priorità è garantire una fruizione semplice e diretta dei contenuti visivi.<br>
+                SEO di base è stato implementato per facilitare la reperibilità tramite motori di ricerca. Il sito sarà promosso anche tramite i miei canali social e materiali promozionali offline.
+            </p>
+        
+            <h2 id="sviluppi-futuri">8. Sviluppi Futuri</h2>
+            <ul>
+                <li>completamento della versione mobile responsive</li>
+                <li>traduzione in lingua inglese</li>
+                <li>implementazione di una sezione shop digitale</li>
+                <li>aggiornamento periodico delle gallerie con nuovi lavori</li>
+            </ul>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18K ANTI ANTI - Elia Cialdini</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">ELIA CIALDINI</a>
+        <ul>
+            <li><a href="works.html">WORKS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <div class="project-header">
+            <h1>18K ANTI ANTI</h1>
+            <p class="project-description">
+                Live Milano - 20/12/2024
+            </p>
+        </div>
+
+        <div class="project-gallery">
+            <img src="images/18K ANTI ANTI MILANO/1 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/2 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/3 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/4 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/5 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/6 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/7 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/8 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/9 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/10 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/11 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/12 .jpg" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/13 .png" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/14 .png" alt="18K ANTI ANTI">
+            <img src="images/18K ANTI ANTI MILANO/15 .jpg" alt="18K ANTI ANTI">\
+            
+        </div>
+    </div>
+    <!-- Aggiungi prima della chiusura del body -->
+    <script>
+        const images = document.querySelectorAll('.project-gallery img');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        images.forEach(image => {
+            observer.observe(image);
+        });
+    </script>
+</body>
+</html>

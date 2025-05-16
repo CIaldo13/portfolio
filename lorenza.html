@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LORENZA - Shooting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">ELIA CIALDINI</a>
+        <ul>
+            <li><a href="works.html">works</a></li>
+            <li><a href="personal-projects.html">personal projects</a></li>
+            <li><a href="about.html">about me</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <div class="project-header">
+            <h1 class="project-title">LORENZA</h1>
+            <h3 class="project-title">Model Shooting - 2025</h1>
+           
+            <div class="project-content">
+                <div class="project-flex-row">
+                    <pre class="code-style" id="typewriter"></pre>
+                    <div class="project-credits">
+                        <div class="terminal-credits">
+                            <div class="terminal-bar">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="background-image"></div>
+        <div class="project-gallery">
+            <img src="images/LORENZA/1 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/2 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/3 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/4 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/5 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/6 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/7 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/8 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/9 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/10 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/11 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/12 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/13 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/14 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/15 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/16 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/17 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/18 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/19 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/20 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/21 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/22 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/23 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/24 .jpg" alt="LORENZA" class="grid-medium">
+            <img src="images/LORENZA/25 .jpg" alt="LORENZA" class="grid-small">
+            <img src="images/LORENZA/26 .jpg" alt="LORENZA" class="grid-large">
+            <img src="images/LORENZA/27 .jpg" alt="LORENZA" class="grid-medium">
+        </div>
+    </div>
+
+    <script>
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.project-gallery img').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025 Elia Cialdini. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy |</a></li>
+            <li><a href="terms.html">Terms of Service |</a></li>
+            <li><a href=".html">Web Project Plan |</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
+<script>
+    // Effetto macchina da scrivere per il codice
+    const codeText = `
+{ 
+  "descrizione": [
+    "Quello che ho voluto rappresentare tramite questi scatti è l'unione 
+    tra i termini in cui ragiona la mia testa in merito a uno stile 
+    fotografico e l'effettiva realizzazione tramite la vista (la fotografia).",
+
+    "Mi sono voluto ispirare alla fotografia di Diesel, 
+    con questi colori in stile cartoon, come quelli usati da Jack Bridgland.",
+
+    "Grazie all'aiuto di @Lorenza siamo riusciti a costruire degli outfit 
+    in linea con quello che volevo creare rifacendoci sempre 
+    a un immaginario Diesel, creando un contrasto anche tra il movimento e l'introspezione.",
+    "La luce e il trucco sono state utilizzate per rende questo effetto
+     ricco di dettagli e con dei punti di ludico sulla pelle."
+  ]
+}
+   <ul class="credits-list">
+                                <li> Creative Direction/Photographer:  @𝗲𝗹𝗶𝗮𝗰𝗶𝗮𝗹𝗱𝗶𝗻𝗶 @𝗲𝗹𝗰𝗶𝗮𝗹𝗱𝗼  </li>
+                                <li> Model/Styling: @𝗹𝗼𝗿𝗲𝗻𝘇𝗮_𝗺𝗮𝗿𝗲𝘁𝘁𝗼  </li>
+                                <li> MUA: @𝗳𝗲𝗹𝗶𝘀𝗶𝗮𝘀𝗮𝗻𝘁𝗮𝗴𝗮𝘁𝗮.𝗺𝘂𝗮 </li>
+                                <li> Assistant: @𝘀𝗮𝗿𝗮𝘀𝗮𝗿𝘁𝗽𝗵𝗼𝘁𝗼  </li>
+                                <li> Location: @𝘀𝗽𝗮𝘇𝗶𝗼𝗹𝗮𝗯𝗼  </li>
+                            </ul>
+    `;
+    const typewriterElement = document.getElementById('typewriter');
+    let i = 0;
+    function typeWriter() {
+        if (i < codeText.length) {
+            typewriterElement.textContent += codeText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 15); // velocità effetto
+        }
+    }
+    typeWriter();
+</script>
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+</div>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.project-gallery img').forEach(element => {
+        observer.observe(element);
+    });
+</script>
+
+<script>
+    const images = document.querySelectorAll('.project-gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        lightbox.style.display = 'block';
+        lightboxImg.src = images[index].src;
+        currentIndex = index;
+    }
+
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            showImage(index);
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    });
+</script>
+</body>
+</html>
+

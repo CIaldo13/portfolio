@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINO - Login - Elia Cialdini</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">ELIA CIALDINI</a>
+        <ul>
+            <li><a href="works.html">WORKS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <div class="project-header">
+            <h1>PINO - Login</h1>
+            <p class="project-description">
+                Music Video - 2023
+            </p>
+        </div>
+
+        <div class="project-gallery">
+            <video controls autoplay muted loop>
+                <source src="images/PINO LOGIN/1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="images/PINO LOGIN/2.jpg" alt="PINO - Login">
+            <img src="images/PINO LOGIN/3.jpg" alt="PINO - Login">
+            <img src="images/PINO LOGIN/4.png" alt="PINO - Login">
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.project-gallery img, .project-gallery video').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
